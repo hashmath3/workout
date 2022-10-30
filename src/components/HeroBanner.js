@@ -1,5 +1,6 @@
 import React from 'react';
 import { Box, Stack, Typography } from '@mui/material';
+import { motion } from "framer-motion";
 
 import HeroBannerImage from '../assets/images/banner.png';
 
@@ -19,7 +20,17 @@ const HeroBanner = () => (
     <Typography fontWeight={600} color="#FF2625" sx={{ opacity: '0.1', display: { lg: 'block', xs: 'none' }, fontSize: '200px' }}>
       Exercise
     </Typography>
-    <img src={HeroBannerImage} alt="hero-banner" className="hero-banner-img" />
+    <motion.img src={HeroBannerImage} alt="hero-banner"  
+          animate={{ 
+             scale:[1,1.4, 1.4, 1,1 ],
+             borderRadius:["15%", "15%","50%","50%","15%"],
+            //  rotate:[0,0,270,270,0],
+            x:650,
+          
+          }}
+       
+          transition={{duration:2}}
+          className="hero-banner-img" />
   </Box>
 );
 
